@@ -5,8 +5,10 @@
   "description": "Add something extra with a lil wiggle to all the forms you fill",
   "short_name": "Wiggle Text",
   "permissions": ["activeTab", "declarativeContent", "storage", "<all_urls>"],
-  "background": {
-    "scripts": ["rainbow.js"],
-    "persistent": false
-  }
+  "content_scripts": [
+    {
+      "js": ["content.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }
