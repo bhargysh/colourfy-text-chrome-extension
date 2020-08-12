@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+  "name": "Wiggle Text",
+  "version": "1.0.0",
+  "description": "Add something extra with a lil wiggle to all the forms you fill",
+  "short_name": "Wiggle Text",
+  "permissions": ["activeTab", "declarativeContent", "storage", "<all_urls>"],
+  "background": {
+    "scripts": ["rainbow.js"],
+    "persistent": false
+  }
+}
