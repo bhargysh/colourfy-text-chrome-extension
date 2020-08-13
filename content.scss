@@ -1,0 +1,23 @@
+input[type="text"] {
+  background-color: purple;
+  background-image: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+  background-size: 30%;
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+input[type="email"] {
+  color: green !important;
+}
+
+input[type="password"] {
+  color: green !important;
+}
+
+input[type="url"] {
+  color: green !important;
+}

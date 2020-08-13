@@ -7,7 +7,7 @@
   "permissions": ["activeTab", "declarativeContent", "storage", "<all_urls>"],
   "content_scripts": [
     {
-      "js": ["content.js"],
+      "css": ["content.scss"],
       "matches": ["<all_urls>"]
     }
   ]
