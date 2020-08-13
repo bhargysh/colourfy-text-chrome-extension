@@ -12,9 +12,9 @@ input[type="password"]:focus {
   background-size: 30%;
   background-repeat: repeat;
   background-clip: text !important;
-  -webkit-background-clip: text;
+  -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
+  -moz-background-clip: text !important;
   -moz-text-fill-color: transparent;
   background-color: white;
 }
