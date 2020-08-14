@@ -5,10 +5,8 @@
   "description": "Add something extra with a lil wiggle to all the forms you fill",
   "short_name": "Wiggle Text",
   "permissions": ["activeTab", "declarativeContent", "storage", "<all_urls>"],
-  "content_scripts": [
-    {
-      "css": ["content.scss"],
-      "matches": ["<all_urls>"]
-    }
-  ]
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "Choose your theme"
+  }
 }
