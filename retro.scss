@@ -5,16 +5,8 @@ input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus {
   color: black !important;
-  background-image: linear-gradient(
-    to right,
-    red,
-    orange,
-    yellow,
-    green,
-    cyan,
-    blue,
-    violet
-  ) !important;
+  background-image:
+    linear-gradient(to right, #d0cfecff, #f61067ff, #5e239dff, #00f0b5ff, #edc7cfff) !important;
   background-size: 30%;
   background-repeat: repeat;
   background-clip: text !important;
@@ -34,7 +26,8 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-text-fill-color: green;
-  -moz-text-fill-color: green;
+  -webkit-text-fill-color: #5e239dff;
+  -moz-text-fill-color: #5e239dff;
   transition: background-color 5000s ease-in-out 0s;
 }
+
