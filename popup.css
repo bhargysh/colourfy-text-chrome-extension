@@ -1,0 +1,169 @@
+body {
+  width: 100%;
+  min-height: 50vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+div#inputbox {
+  width: 50%;
+  min-height: inherit;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  position: relative;
+}
+
+div#inputbox::before,
+div#inputbox::after {
+  content: "";
+  display: block;
+
+  border-radius: 100%;
+
+  position: absolute;
+}
+
+div#inputbox::before {
+  width: 30px;
+  height: 30px;
+
+  background: rgba(205, 146, 245, 0.8);
+  clip-path: polygon(0 100%, 100% 0, 100% 100%);
+
+  top: 18px;
+  left: 18px;
+}
+
+div#inputbox::after {
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid rgba(205, 146, 245, 0.8);
+
+  top: 11px;
+  left: 11px;
+}
+
+.theme {
+  background: hsl(0, 0%, 98%);
+}
+
+h2 {
+  color:  hsl(0, 0%, 14%);
+  background-image:
+    linear-gradient(217deg, rgba(214, 81, 189, 0.8), rgba(255, 0, 0, 0) 70.71%),
+    linear-gradient(127deg, rgba(255, 154, 118, 0.8), rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+  background-size: 30%;
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  background-color: white;
+  padding: 8px 4px;
+}
+
+label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  margin: 12px 0;
+
+  cursor: pointer;
+  position: relative;
+}
+
+input {
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.design {
+  width: 16px;
+  height: 16px;
+
+  border: 1px solid  hsl(0, 0%, 14%);
+  border-radius: 100%;
+  margin-right: 16px;
+
+  position: relative;
+}
+
+.design::before,
+.design::after {
+  content: "";
+  display: block;
+
+  width: inherit;
+  height: inherit;
+
+  border-radius: inherit;
+
+  position: absolute;
+  transform: scale(0);
+  transform-origin: center center;
+}
+
+.design:before {
+  background:  hsl(0, 0%, 14%);
+  opacity: 0;
+  transition: .3s;
+}
+
+.design::after {
+  background: rgba(205, 146, 245, 0.8);
+  opacity: .4;
+  transition: .6s;
+}
+
+.text {
+  color:  hsl(0, 0%, 14%);
+  font-weight: bold;
+  margin-right: 2px;
+}
+
+input:checked+.design::before {
+  opacity: 1;
+  transform: scale(.6);
+}
+
+
+/* other states */
+input:hover+.design,
+input:focus+.design {
+  border: 1px solid rgba(205, 146, 245, 0.8);
+}
+
+input:hover+.design:before,
+input:focus+.design:before {
+  background: rgba(205, 146, 245, 0.8);
+}
+
+input:hover~.text {
+  color: rgba(205, 146, 245, 0.8);
+}
+
+input:focus+.design::after,
+input:active+.design::after {
+  opacity: .1;
+  transform: scale(1.5);
+}

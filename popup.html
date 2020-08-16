@@ -1,15 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="popup.css">
+</head>
 <body>
-    <h1>Colourfy Text</h1>
-    <span class="message"></span>
-    <hr>
+    <h2>Colourfy Text</h2>
     <div class="inputbox">
-      <h2>Themes:</h2>
-      <input type="radio" id="bubblegum" name="theme" value="bubblegum"></input>
-      <label for="bubblegum">Bubblegum</label><br>
-      <input type="radio" id="rainbow" name="theme" value="rainbow"></input>
-      <label for="rainbow">Rainbow</label><br>
-      <input type="radio" id="retro" name="theme" value="rainbow"></input>
-      <label for="retro">Retro</label><br>
+      <label>
+        <input type="radio" id="bubblegum" name="theme" value="bubblegum"></input>
+        <span class="design"></span>
+        <span class="text">Bubblegum</span>
+      </label>
+      <label>
+        <input type="radio" id="rainbow" name="theme" value="rainbow"></input>
+        <span class="design"></span>
+        <span class="text">Rainbow</span>
+      </label>
+      <label>
+        <input type="radio" id="retro" name="theme" value="retro"></input>
+        <span class="design"></span>
+        <span class="text">Retro</span>
+      </label>
     </div>
 </body>
 <script type="module" src="popup.js"></script>
+</html>

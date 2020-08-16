@@ -1,3 +1,5 @@
+const defaultTheme = "bubblegum"
+
 function injectCSS(id) {
   chrome.tabs.insertCSS({ file: `${id}.scss` });
 }
