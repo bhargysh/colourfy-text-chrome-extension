@@ -1,50 +1,30 @@
-chrome.runtime.sendMessage({
-  from: "content",
-  subject: "showBrowserAction",
-});
+const defaultTheme = "bubblegum";
 
-chrome.runtime.onMessage.addListener((msg, _sender, state) => {
-  if (msg.from === "background" && msg.subject === "current theme") {
-    checkRadioButton(state);
-    insertChosenCSS(state);
-  }
-});
-
-const inputs = document.getElementsByTagName("input");
-document.addEventListener("change", () => {
-  for (const elem of inputs) {
-    elem.checked ? changeTheme(elem) : "";
-  }
-});
-
-function changeTheme(elem) {
-  try {
-    console.log("ABOUT TO EXECUTE CSS...");
-    insertChosenCSS(elem.id);
-    console.log("FINISHED EXECUTING CSS");
-
-    updateState(elem.id);
-  } catch (error) {
-    console.error(error);
-  }
+function askBackgroundToInjectCSS(id) {
+  chrome.runtime.sendMessage(
+    { from: "content", subject: "injectCSS", theme: id },
+    function (response) {
+      console.log(response);
+    }
+  );
 }
 
-function insertChosenCSS(themeStr) {
-  chrome.tabs.insertCSS({ file: `${themeStr}.scss` });
-}
-
-function updateState(theme) {
-  chrome.runtime.sendMessage({
-    from: "content",
-    subject: "Update state",
-    state: theme,
+function setStateToTheme(obj) {
+  chrome.storage.sync.set(obj, function () {
+    checkRadioButton(obj.theme);
   });
 }
 
-function checkRadioButton(state) {
-  const elem = document.getElementsById(state)
-  console.log(`ID: ${elem.id} CHECKED: ${elem.checked}`);
-  elem.checked = true;
-}
-
-// https://stackoverflow.com/questions/23339944/remember-state-chrome-extension
+document.addEventListener("readystatechange", (event) => {
+  if (event.target.readyState === "complete") {
+    chrome.storage.sync.get("theme", function (obj) {
+      if (obj.theme) {
+        const theme = obj.theme;
+        askBackgroundToInjectCSS(theme);
+      } else {
+        askBackgroundToInjectCSS(defaultTheme);
+        setStateToTheme({ theme: defaultTheme });
+      }
+    });
+  }
+});
