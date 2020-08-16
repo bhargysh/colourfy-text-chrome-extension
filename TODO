@@ -1,0 +1,3 @@
+- content.js line 6: throws error before receiving response
+- input box is transparent, can't see
+- remove logState
