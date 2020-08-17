@@ -12,17 +12,9 @@ function setStateToTheme(obj) {
   });
 }
 
-function logState() {
-  chrome.storage.sync.get(null, function (items) {
-    var allKeys = Object.keys(items);
-    console.log(allKeys);
-  });
-}
-
 export {
   defaultTheme,
   injectCSS,
   checkRadioButton,
-  setStateToTheme,
-  logState,
+  setStateToTheme
 };

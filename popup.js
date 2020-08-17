@@ -2,15 +2,13 @@ import {
   defaultTheme,
   injectCSS,
   checkRadioButton,
-  setStateToTheme,
-  logState
+  setStateToTheme
 } from "./helper.js";
 
 chrome.browserAction.setPopup({ popup: "popup.html" });
 
 document.addEventListener("DOMContentLoaded", function () {
   chrome.storage.sync.get("theme", function (obj) {
-    console.log(`storage on load ${logState()}`);
     console.log(obj);
     if (obj.theme) {
       const id = obj.theme;
