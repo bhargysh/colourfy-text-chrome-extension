@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
-  "name": "Wiggle Text",
-  "version": "1.0.0",
-  "description": "Add a pop of colour to the forms you fill",
-  "short_name": "Wiggle Text",
+  "name": "Colourfy Text",
+  "version": "0.0.1",
+  "description": "Add a pop of colour to your input text fields",
+  "short_name": "Colourfy Text",
   "permissions": ["activeTab", "storage", "tabs", "http://*/", "https://*/"],
   "browser_action": {
     "default_popup": "popup.html",

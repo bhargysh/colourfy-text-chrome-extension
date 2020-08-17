@@ -1,26 +1,21 @@
 body {
   width: 100%;
   min-height: 50vh;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   margin: 0;
   padding: 0;
-
   font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 div#inputbox {
   width: 50%;
   min-height: inherit;
-
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
   position: relative;
 }
 
@@ -28,19 +23,15 @@ div#inputbox::before,
 div#inputbox::after {
   content: "";
   display: block;
-
   border-radius: 100%;
-
   position: absolute;
 }
 
 div#inputbox::before {
   width: 30px;
   height: 30px;
-
-  background: rgba(205, 146, 245, 0.8);
+  background: #7F7979;
   clip-path: polygon(0 100%, 100% 0, 100% 100%);
-
   top: 18px;
   left: 18px;
 }
@@ -48,9 +39,7 @@ div#inputbox::before {
 div#inputbox::after {
   width: 42px;
   height: 42px;
-
-  border: 1px solid rgba(205, 146, 245, 0.8);
-
+  border: 1px solid #7F7979;
   top: 11px;
   left: 11px;
 }
@@ -61,18 +50,6 @@ div#inputbox::after {
 
 h2 {
   color:  hsl(0, 0%, 14%);
-  background-image:
-    linear-gradient(217deg, rgba(214, 81, 189, 0.8), rgba(255, 0, 0, 0) 70.71%),
-    linear-gradient(127deg, rgba(255, 154, 118, 0.8), rgba(0, 255, 0, 0) 70.71%),
-    linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
-  background-size: 30%;
-  background-repeat: repeat;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
-  background-color: white;
   padding: 8px 4px;
 }
 
@@ -100,11 +77,9 @@ input {
 .design {
   width: 16px;
   height: 16px;
-
   border: 1px solid  hsl(0, 0%, 14%);
   border-radius: 100%;
   margin-right: 16px;
-
   position: relative;
 }
 
@@ -112,12 +87,9 @@ input {
 .design::after {
   content: "";
   display: block;
-
   width: inherit;
   height: inherit;
-
   border-radius: inherit;
-
   position: absolute;
   transform: scale(0);
   transform-origin: center center;
@@ -130,7 +102,7 @@ input {
 }
 
 .design::after {
-  background: rgba(205, 146, 245, 0.8);
+  background: #7F7979;
   opacity: .4;
   transition: .6s;
 }
@@ -141,25 +113,58 @@ input {
   margin-right: 2px;
 }
 
+span:hover,
+span:focus,
+label:hover,
+label:focus {
+  color:  black;
+  background-size: 50%;
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  background-color: white;
+}
+
+span#bubblegum:hover,
+span#bubblegum:focus,
+label#bubblegum:hover,
+label#bubblegum:focus {
+  background-image:
+  linear-gradient(217deg, rgba(214, 81, 189, 0.8), rgba(255, 0, 0, 0) 70.71%),
+  linear-gradient(127deg, rgba(255, 154, 118, 0.8), rgba(0, 255, 0, 0) 70.71%),
+  linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+}
+
+span#rainbow:hover,
+span#rainbow:focus,
+label#rainbow:hover,
+label#rainbow:focus {
+  background-image: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    violet
+  );
+}
+
+span#retro:hover,
+span#retro:focus,
+label#retro:hover,
+label#retro:focus {
+  background-image:
+    linear-gradient(to right, #d0cfecff, #f61067ff, #5e239dff, #00f0b5ff, #edc7cfff);
+}
+
 input:checked+.design::before {
   opacity: 1;
   transform: scale(.6);
-}
-
-
-/* other states */
-input:hover+.design,
-input:focus+.design {
-  border: 1px solid rgba(205, 146, 245, 0.8);
-}
-
-input:hover+.design:before,
-input:focus+.design:before {
-  background: rgba(205, 146, 245, 0.8);
-}
-
-input:hover~.text {
-  color: rgba(205, 146, 245, 0.8);
 }
 
 input:focus+.design::after,
