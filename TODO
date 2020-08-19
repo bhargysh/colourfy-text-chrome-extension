@@ -1,3 +1,2 @@
-- content.js line 6: throws error before receiving response
-- input box is transparent, can't see
-- remove logState
+- input box is transparent, can't see text, flaky
+- when page loads, delay in loading the theme (want it to be pre-loaded somehow)
