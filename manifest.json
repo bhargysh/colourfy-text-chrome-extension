@@ -7,7 +7,11 @@
   "permissions": ["activeTab", "storage", "tabs", "http://*/", "https://*/"],
   "browser_action": {
     "default_popup": "popup.html",
-    "default_title": "Choose your theme"
+    "default_title": "Choose your theme",
+    "default_icon": {
+      "16": "rainbow_faded16.png",
+      "32": "rainbow_faded32.png"
+    }
   },
   "background": {
     "scripts": ["background.js"],
